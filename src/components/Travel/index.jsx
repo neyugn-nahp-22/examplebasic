@@ -46,6 +46,11 @@ function Travel() {
 
   const [dataSource, setDataSource] = useState(data);
 
+  const handleDelete = (id) => {
+    const newArray = dataSource.filter((item) => item?.id !== id);
+    setDataSource(newArray);
+  };
+
   const handleRefresh = () => {
     setDataSource(data);
   };
@@ -85,7 +90,9 @@ function Travel() {
                         {item.des}
                       </ReactReadMoreReadLess>
                     </p>
-                    <button className={cx("more-btn")}>Not Interested</button>
+                    <button className={cx("more-btn")} onClick={() => handleDelete(item.id)}>
+                      Not Interested
+                    </button>
                   </div>
                 </article>
               );
