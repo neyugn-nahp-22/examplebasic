@@ -1,0 +1,136 @@
+.wrapper {
+  width: 90vw;
+  max-width: var(--max-width);
+  margin: 5rem auto;
+}
+
+.title {
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.441rem;
+}
+
+.title-underline {
+  background: var(--primary-500);
+  width: 7rem;
+  height: 0.25rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  line-height: 1;
+  font-weight: 400;
+  text-transform: capitalize;
+  letter-spacing: var(--letterSpacing);
+}
+
+@media screen and (min-width: 768px) {
+  .tours {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .tours {
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.tours {
+  display: grid;
+  padding: 2rem 0;
+  gap: 2rem;
+}
+
+.single-tour {
+  background: var(--white);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--shadow-1);
+  transition: var(--transition);
+  position: relative;
+}
+
+.single-tour .img {
+  height: 20rem;
+  border-top-right-radius: var(--borderRadius);
+  border-top-left-radius: var(--borderRadius);
+}
+
+.img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.tour-price {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
+  color: var(--white);
+  letter-spacing: 2px;
+  background: var(--primary-500);
+  border-top-right-radius: var(--borderRadius);
+}
+
+.tour-info {
+  padding: 2rem 1.5rem;
+
+  h5 {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  p {
+    line-height: 1.5;
+    color: var(--grey-500);
+    margin-bottom: 1.25rem;
+  }
+}
+
+.more-btn {
+  border: 1px solid var(--primary-500);
+  color: var(--primary-500);
+  background: transparent;
+  text-transform: capitalize;
+  cursor: pointer;
+  width: 100%;
+  border-radius: var(--borderRadius);
+  letter-spacing: var(--letterSpacing);
+  padding: 0.375rem 0.75rem;
+  box-shadow: var(--shadow-1);
+  transition: var(--transition);
+  display: inline-block;
+  &:hover {
+    background-color: var(--primary-500);
+    color: var(--white);
+    box-shadow: var(--shadow-3);
+    border: 1px solid var(--primary-500);
+  }
+}
+
+.refresh-btn {
+  cursor: pointer;
+  color: var(--white);
+  background-color: var(--primary-500);
+  border: transparent;
+  border-radius: var(--borderRadius);
+  letter-spacing: var(--letterSpacing);
+  padding: 0.375rem 0.75rem;
+  box-shadow: var(--shadow-1);
+  transition: var(--transition);
+  display: inline-block;
+}
