@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames/bind";
 import styles from "./Review.module.scss";
 import { faAngleLeft, faAngleRight, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
+import Button from "../Button";
 
 const cx = classNames.bind(styles);
 
@@ -43,13 +44,30 @@ function Review() {
     },
   ];
 
-  
+  const [newPerson, setNewPerSon] = useState(0);
 
-  
+  const handlePrev = (id) => {
+    const currentIndex = data.findIndex((findItem) => findItem.id === id);
+    if (currentIndex === 0) {
+      setNewPerSon(data.length - 1);
+      return;
+    }
+    setNewPerSon(currentIndex - 1);
+  };
+
+  const handleNext = (id) => {
+    const currentIndex = data.findIndex((findItem) => findItem.id === id);
+    if (currentIndex === data.length - 1) {
+      setNewPerSon(0);
+      return;
+    }
+    setNewPerSon(currentIndex + 1);
+  };
+
   return (
     <div className={cx("wrapper")}>
       <main>
-        {data.map((item, index) => (
+        {[data[newPerson]].map((item, index) => (
           <article key={index} className={cx("review")}>
             <div className={cx("img-container")}>
               <img className={cx("person-img")} src={item.image} alt="" />
@@ -61,14 +79,14 @@ function Review() {
             <p className={cx("level")}>{item.level}</p>
             <p className={cx("title")}>{item.title}</p>
             <div>
-              <button className={cx("prev-btn")}>
+              <Button directional onClick={() => handlePrev(item.id)}>
                 <FontAwesomeIcon icon={faAngleLeft} />
-              </button>
-              <button  className={cx("next-btn")}>
+              </Button>
+              <Button directional onClick={() => handleNext(item.id)}>
                 <FontAwesomeIcon icon={faAngleRight} />
-              </button>
+              </Button>
             </div>
-            <button className={cx("more-btn")}>Suprise Me</button>
+            <Button className={cx("more-btn")}>Suprise Me</Button>
           </article>
         ))}
       </main>

@@ -35,7 +35,7 @@ main {
   content: "";
   width: 100%;
   height: 100%;
-  background: var(--primary-500);
+  background: var(--purple-500);
   position: absolute;
   top: -0.25rem;
   right: -0.5rem;
@@ -61,7 +61,7 @@ main {
   place-items: center;
   border-radius: 50%;
   transform: translateY(25%);
-  background: var(--primary-500);
+  background: var(--purple-500);
   color: var(--white);
 }
 
@@ -72,7 +72,7 @@ main {
 
 .level {
   text-transform: uppercase;
-  color: var(--primary-500);
+  color: var(--purple-500);
   font-size: 0.85rem;
   font-weight: 500;
   margin-bottom: 0.75rem;
@@ -85,20 +85,9 @@ main {
   color: var(--grey-600);
 }
 
-.prev-btn,
-.next-btn {
-  color: var(--primary-700);
-  background: transparent;
-  border-color: transparent;
-  font-size: 1.25rem;
-  margin: 0 0.5rem;
-  transition: var(--transition);
-  cursor: pointer;
-}
-
 .more-btn {
-  color: var(--primary-500);
-  background: var(--primary-200);
+  color: var(--purple-500);
+  background: var(--purple-200);
   border: transparent;
   border-radius: var(--borderRadius);
   letter-spacing: var(--letterSpacing);
@@ -110,7 +99,7 @@ main {
   cursor: pointer;
 
   &:hover {
-    color: var(--primary-200);
-    background: var(--primary-700);
+    color: var(--purple-200);
+    background: var(--purple-700);
   }
 }

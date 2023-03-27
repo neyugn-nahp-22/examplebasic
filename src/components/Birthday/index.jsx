@@ -1,7 +1,7 @@
-import { Button } from "antd";
-import { useState } from "react";
-import styles from "./Birthday.module.scss";
 import classNames from "classnames/bind";
+import { useState } from "react";
+import Button from "../Button";
+import styles from "./Birthday.module.scss";
 
 const cx = classNames.bind(styles);
 
@@ -41,29 +41,27 @@ function Birthday() {
   };
 
   return (
-    <div className={cx("wrapper")}>
-      <main className={cx("container")}>
-        <div className={cx("content")}>
-          <h3>{dataSource.length} Birthdays Today</h3>
-          {dataSource.map((item, key) => {
-            return (
-              <section key={key} className={cx("profile")}>
-                <article className={cx("person")}>
-                  <img className={cx("image")} src={item.avatar} alt=""></img>
-                  <div>
-                    <h4>{item.name}</h4>
-                    <p>{item.age}</p>
-                  </div>
-                </article>
-              </section>
-            );
-          })}
-        </div>
+    <main className={cx("container")}>
+      <section className={cx("content")}>
+        <h3>{dataSource.length} Birthdays Today</h3>
+        {dataSource.map((item, key) => {
+          return (
+            <section key={key}>
+              <article className={cx("person")}>
+                <img className={cx("image")} src={item.avatar} alt=""></img>
+                <div>
+                  <h4>{item.name}</h4>
+                  <p>{item.age} years</p>
+                </div>
+              </article>
+            </section>
+          );
+        })}
         <Button onClick={handleClear} className={cx("clear-btn")}>
           Clear All
         </Button>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }
 

@@ -1,11 +1,7 @@
 import Review from "../../components/Review";
 
 function ReviewPage() {
-  return (
-    <div>
-      <Review />
-    </div>
-  );
+  return <Review />;
 }
 
 export default ReviewPage;

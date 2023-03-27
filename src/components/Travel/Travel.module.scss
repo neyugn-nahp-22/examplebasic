@@ -13,7 +13,7 @@ h2 {
 }
 
 .title-underline {
-  background: var(--primary-500);
+  background: var(--green-500);
   width: 7rem;
   height: 0.25rem;
   margin: 0 auto;
@@ -67,7 +67,7 @@ h2 {
   padding: 0.5rem;
   color: var(--white);
   letter-spacing: 2px;
-  background: var(--primary-500);
+  background: var(--green-500);
   border-top-right-radius: var(--borderRadius);
 }
 
@@ -90,30 +90,22 @@ h2 {
 }
 
 .more-btn {
-  border: 1px solid var(--primary-500);
-  color: var(--primary-500);
+  border: 1px solid var(--green-500);
+  color: var(--green-500);
   background: transparent;
-  text-transform: capitalize;
-  cursor: pointer;
   width: 100%;
-  border-radius: var(--borderRadius);
-  letter-spacing: var(--letterSpacing);
-  padding: 0.375rem 0.75rem;
-  box-shadow: var(--shadow-1);
-  transition: var(--transition);
-  display: inline-block;
   &:hover {
-    background-color: var(--primary-500);
+    background-color: var(--green-500);
     color: var(--white);
     box-shadow: var(--shadow-3);
-    border: 1px solid var(--primary-500);
+    border: 1px solid var(--green-500);
   }
 }
 
 .refresh-btn {
   cursor: pointer;
   color: var(--white);
-  background-color: var(--primary-500);
+  background-color: var(--green-500);
   border: transparent;
   border-radius: var(--borderRadius);
   letter-spacing: var(--letterSpacing);
@@ -121,4 +113,8 @@ h2 {
   box-shadow: var(--shadow-1);
   transition: var(--transition);
   display: inline-block;
+  &:hover {
+    background-color: var(--green-700);
+    box-shadow: var(--shadow-3);
+  }
 }

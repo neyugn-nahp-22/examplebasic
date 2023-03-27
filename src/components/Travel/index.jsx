@@ -1,6 +1,7 @@
 import classNames from "classnames/bind";
 import { useState } from "react";
 import ReactReadMoreReadLess from "react-read-more-read-less";
+import Button from "../Button";
 import styles from "./Travel.module.scss";
 
 const cx = classNames.bind(styles);
@@ -79,20 +80,20 @@ function Travel() {
                         readMoreStyle={{
                           fontWeight: 600,
                           cursor: "pointer",
-                          color: "var(--primary-500)",
+                          color: "var(--green-500)",
                         }}
                         readLessStyle={{
                           fontWeight: 600,
                           cursor: "pointer",
-                          color: "var(--primary-500)",
+                          color: "var(--green-500)",
                         }}
                       >
                         {item.des}
                       </ReactReadMoreReadLess>
                     </p>
-                    <button className={cx("more-btn")} onClick={() => handleDelete(item.id)}>
+                    <Button className={cx("more-btn")} onClick={() => handleDelete(item.id)}>
                       Not Interested
-                    </button>
+                    </Button>
                   </div>
                 </article>
               );
@@ -102,13 +103,13 @@ function Travel() {
       ) : (
         <div className={cx("title")}>
           <h2>no tours left</h2>
-          <button
+          <Button
             onClick={handleRefresh}
             style={{ marginTop: "2rem" }}
             className={cx("refresh-btn")}
           >
             Refresh
-          </button>
+          </Button>
         </div>
       )}
     </main>
