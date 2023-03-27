@@ -34,7 +34,7 @@ function Review() {
         "I'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carry",
     },
     {
-      id: 12984782293,
+      id: 12983781923,
       image: "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883409/person-2_np9x5l.jpg",
       name: "Anna Johnson",
       level: "WEB DESIGNER",
@@ -43,12 +43,13 @@ function Review() {
     },
   ];
 
-  const [newPerson, setNewPerSon] = useState(0);
+  
 
+  
   return (
     <div className={cx("wrapper")}>
       <main>
-        {[data[newPerson]].map((item, index) => (
+        {data.map((item, index) => (
           <article key={index} className={cx("review")}>
             <div className={cx("img-container")}>
               <img className={cx("person-img")} src={item.image} alt="" />
@@ -63,7 +64,7 @@ function Review() {
               <button className={cx("prev-btn")}>
                 <FontAwesomeIcon icon={faAngleLeft} />
               </button>
-              <button className={cx("next-btn")}>
+              <button  className={cx("next-btn")}>
                 <FontAwesomeIcon icon={faAngleRight} />
               </button>
             </div>
