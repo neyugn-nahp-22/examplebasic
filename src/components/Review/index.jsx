@@ -45,24 +45,6 @@ function Review() {
 
   const [newPerson, setNewPerSon] = useState(0);
 
-  const handlePrev = (id) => {
-    const currentIndex = data.findIndex((findItem) => findItem.id === id);
-    if (currentIndex === 0) {
-      setNewPerSon(data.length - 1);
-      return;
-    }
-    setNewPerSon(currentIndex - 1);
-  };
-
-  const handleNext = (id) => {
-    const currentIndex = data.findIndex((findItem) => findItem.id === id);
-    if (currentIndex === data.length - 1) {
-      setNewPerSon(0);
-      return;
-    }
-    setNewPerSon(currentIndex + 1);
-  };
-
   return (
     <div className={cx("wrapper")}>
       <main>
@@ -78,10 +60,10 @@ function Review() {
             <p className={cx("level")}>{item.level}</p>
             <p className={cx("title")}>{item.title}</p>
             <div>
-              <button onClick={() => handlePrev(item.id)} className={cx("prev-btn")}>
+              <button className={cx("prev-btn")}>
                 <FontAwesomeIcon icon={faAngleLeft} />
               </button>
-              <button onClick={() => handleNext(item.id)} className={cx("next-btn")}>
+              <button className={cx("next-btn")}>
                 <FontAwesomeIcon icon={faAngleRight} />
               </button>
             </div>
