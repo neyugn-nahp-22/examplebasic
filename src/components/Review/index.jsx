@@ -65,8 +65,7 @@ function Review() {
   };
 
   const handleRandom = () => {
-    var randomIndex = Math.floor(Math.random() * data.length);
-
+    let randomIndex = Math.floor(Math.random() * data.length);
     if (randomIndex === currentIndex) {
       randomIndex = (randomIndex + 1) % data.length;
     }
