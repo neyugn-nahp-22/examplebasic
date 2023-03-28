@@ -37,7 +37,6 @@ function Birthday() {
 
   const handleClear = () => {
     setDataSource([]);
-    console.log(dataSource);
   };
 
   return (

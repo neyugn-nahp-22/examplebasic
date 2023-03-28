@@ -44,30 +44,40 @@ function Review() {
     },
   ];
 
-  const [newPerson, setNewPerSon] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrev = (id) => {
     const currentIndex = data.findIndex((findItem) => findItem.id === id);
     if (currentIndex === 0) {
-      setNewPerSon(data.length - 1);
+      setCurrentIndex(data.length - 1);
       return;
     }
-    setNewPerSon(currentIndex - 1);
+    setCurrentIndex(currentIndex - 1);
   };
 
   const handleNext = (id) => {
     const currentIndex = data.findIndex((findItem) => findItem.id === id);
     if (currentIndex === data.length - 1) {
-      setNewPerSon(0);
+      setCurrentIndex(0);
       return;
     }
-    setNewPerSon(currentIndex + 1);
+    setCurrentIndex(currentIndex + 1);
+  };
+
+  const handleRandom = () => {
+    var randomIndex = Math.floor(Math.random() * data.length);
+
+    if (randomIndex === currentIndex) {
+      randomIndex = (randomIndex + 1) % data.length;
+    }
+    setCurrentIndex(randomIndex);
+    return;
   };
 
   return (
     <div className={cx("wrapper")}>
       <main>
-        {[data[newPerson]].map((item, index) => (
+        {[data[currentIndex]].map((item, index) => (
           <article key={index} className={cx("review")}>
             <div className={cx("img-container")}>
               <img className={cx("person-img")} src={item.image} alt="" />
@@ -86,7 +96,9 @@ function Review() {
                 <FontAwesomeIcon icon={faAngleRight} />
               </Button>
             </div>
-            <Button className={cx("more-btn")}>Suprise Me</Button>
+            <Button onClick={handleRandom} className={cx("more-btn")}>
+              Suprise Me
+            </Button>
           </article>
         ))}
       </main>

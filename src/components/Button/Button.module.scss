@@ -19,6 +19,7 @@
 }
 
 .directional {
+  all: initial;
   color: var(--purple-700);
   background: transparent;
   border-color: transparent;
@@ -26,4 +27,9 @@
   margin: 0 0.5rem;
   transition: var(--transition);
   cursor: pointer;
+
+  &:hover {
+    background: transparent;
+    box-shadow: none;
+  }
 }
